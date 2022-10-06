@@ -12,7 +12,7 @@ export type RichTextProps = {
 
 export const Default = (props: RichTextProps): JSX.Element => {
   const HTML =
-    props.fields?.ComponentHTML?.value ||
+    props.params?.HTML ||
     `<feaas-component
       library='org_VScskP0sU8VkXjv0-componentstadc5'
       component='wvleE6rXs2'
