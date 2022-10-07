@@ -2,7 +2,7 @@ import '@sitecore-feaas/clientside';
 import { Field } from '@sitecore-jss/sitecore-jss-nextjs';
 
 interface Fields {
-  ComponentHTML: Field<string>;
+  FEAASComponentHTML: Field<string>;
 }
 
 export type RichTextProps = {
@@ -12,7 +12,7 @@ export type RichTextProps = {
 
 export const Default = (props: RichTextProps): JSX.Element => {
   const HTML =
-    props.params?.HTML ||
+    props.params?.FEAASComponentHTML ||
     `<feaas-component
       library='org_VScskP0sU8VkXjv0-componentstadc5'
       component='wvleE6rXs2'
