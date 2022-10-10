@@ -29,7 +29,7 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@sitecore-feaas/clientside": "^0.0.7",
+    "@sitecore-feaas/clientside": "^0.0.9",
     "@sitecore-jss/sitecore-jss-nextjs": "^21.0.0-canary",
     "@sitecore/engage": "^0.3.1",
     "bootstrap": "^5.1.3",
