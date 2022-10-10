@@ -13,11 +13,6 @@ export type RichTextProps = {
 export const Default = (props: RichTextProps): JSX.Element => {
   const HTML =
     props.params?.FEAASComponentHTML;
-  const text = HTML ? (
-    <div dangerouslySetInnerHTML={{ __html: HTML }} />
-  ) : (
-    <span className="is-empty-hint">Rich text</span>
-  );
   const id = props.params.RenderingIdentifier;
 
   return (
@@ -26,8 +21,12 @@ export const Default = (props: RichTextProps): JSX.Element => {
       id={id ? id : undefined}
     >
       <div className="component-content">
-        <h2>Unconfigured Component</h2>
-        <p>Click to choose from the library</p>
+        {HTML ? (
+          <div dangerouslySetInnerHTML={{ __html: HTML }} />
+        ) : <>
+          <h2>Unconfigured Component</h2>
+          <p>Click to choose from the library</p>
+        </>}
       </div>
     </div>
   );
