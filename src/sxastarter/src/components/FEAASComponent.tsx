@@ -12,15 +12,7 @@ export type RichTextProps = {
 
 export const Default = (props: RichTextProps): JSX.Element => {
   const HTML =
-    props.params?.FEAASComponentHTML ||
-    `<feaas-component
-      library='org_VScskP0sU8VkXjv0-componentstadc5'
-      component='wvleE6rXs2'
-      version='Ttgk-XD0-r'
-      revision='staged'
-      hostname='https://feaascomponentsapiqa.blob.core.windows.net'
-      data='{}'>
-    </feaas-component>`;
+    props.params?.FEAASComponentHTML;
   const text = HTML ? (
     <div dangerouslySetInnerHTML={{ __html: HTML }} />
   ) : (
@@ -33,7 +25,10 @@ export const Default = (props: RichTextProps): JSX.Element => {
       className={`component rich-text ${props.params.styles.trimEnd()}`}
       id={id ? id : undefined}
     >
-      <div className="component-content">{text}</div>
+      <div className="component-content">
+        <h2>Unconfigured Component</h2>
+        <p>Click to choose from the library</p>
+      </div>
     </div>
   );
 };
