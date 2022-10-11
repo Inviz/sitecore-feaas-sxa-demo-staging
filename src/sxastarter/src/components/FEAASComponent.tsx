@@ -11,8 +11,7 @@ export type RichTextProps = {
 };
 
 export const Default = (props: RichTextProps): JSX.Element => {
-  const HTML =
-    props.params?.FEAASComponentHTML;
+  const HTML = props.params?.FEAASComponentHTML;
   const id = props.params.RenderingIdentifier;
 
   return (
@@ -23,10 +22,12 @@ export const Default = (props: RichTextProps): JSX.Element => {
       <div className="component-content">
         {HTML ? (
           <div dangerouslySetInnerHTML={{ __html: HTML }} />
-        ) : <>
-          <h2>Unconfigured Component</h2>
-          <p>Click to choose from the library</p>
-        </>}
+        ) : (
+          <>
+            <h2>Unconfigured Component</h2>
+            <p>Click to choose from the library</p>
+          </>
+        )}
       </div>
     </div>
   );
